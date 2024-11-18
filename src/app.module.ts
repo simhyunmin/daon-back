@@ -1,20 +1,17 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { MypageModule } from './mypage/mypage.module';
 import { VolunteersModule } from './volunteers/volunteers.module';
+import { ReviewsModule } from './reviews/reviews.module';
+import { BoardModule } from './board/board.module';
+import { RecruitModule } from './recruit/recruit.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '1234',
-      database: 'daon',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
-    }),
+    MypageModule,
     VolunteersModule,
+    ReviewsModule,
+    BoardModule,
+    RecruitModule
   ],
 })
-export class AppModule {}
+export class AppModule { }
