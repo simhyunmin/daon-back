@@ -3,4 +3,6 @@ export class CreateVolunteerDto {
   description: string;
   date: string;
   location: string;
+  participants: number;
+  maxParticipants: number;
 } 
